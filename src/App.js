@@ -5,6 +5,9 @@ import { SecondaryButton } from './components/atom/button/SecondaryButton';
 import { SubButton } from './components/atom/button/SubButton';
 import { SearchInput } from './components/Molecules/SearchInput';
 import { UserCard } from './components/organism/user/UserCard';
+import { HeaderOnly } from './components/template/HeaderOnly';
+import { DefaultLayout } from './components/template/DefaultLayout';
+import { BrowserRouter } from 'react-router-dom';
 
 const user = {
   name: "うんこ",
@@ -20,15 +23,16 @@ const user = {
 
 export default function App() {
   return (
-    <div>
-      <PrimaryButton>テスト</PrimaryButton>
-      <SecondaryButton>うんこ</SecondaryButton>
-      <SubButton>サブボタン</SubButton>
-      <br />
-      <SearchInput></SearchInput>
-      <br />
-      <UserCard user={user}></UserCard>
-    </div>
-    
+    <BrowserRouter>
+      <DefaultLayout>
+        <PrimaryButton>テスト</PrimaryButton>
+        <SecondaryButton>うんこ</SecondaryButton>
+        <SubButton>サブボタン</SubButton>
+        <br />
+        <SearchInput></SearchInput>
+        <br />
+        <UserCard user={user}></UserCard>
+      </DefaultLayout>
+  </BrowserRouter>
   );
 };
