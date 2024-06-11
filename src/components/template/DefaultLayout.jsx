@@ -1,13 +1,14 @@
 import React from 'react';
 import { Header } from '../atom/layout/Header';
 import { Footer } from '../atom/layout/Footer';
+import { Outlet } from 'react-router-dom';
 
-export const DefaultLayout = (props) => {
-  const { children } = props;
+export const DefaultLayout = () => {
+  
   return (
     <>
       <Header />
-      {children}
+      <Outlet />
       <Footer />
     </>
   );
