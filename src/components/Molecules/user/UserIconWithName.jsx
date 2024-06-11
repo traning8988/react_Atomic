@@ -1,8 +1,12 @@
-import React from 'react'
-import { styled } from 'styled-components';
+import React, { useContext } from 'react'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../providers/UserProvider';
 
 export const UserIconWithName = (props) => {
-  const { name, image } = props;
+  const context = useContext(UserContext);
+  console.log(context);
+  const { name, image, isAdmin } = props;
   return (
     <SContainer>
       <SImg width={160}
@@ -11,6 +15,7 @@ export const UserIconWithName = (props) => {
         alt={name} 
       />
       <SName>{name}</SName>
+      {isAdmin && <SLink to="*">編集</SLink>}
     </SContainer>
   );
 };
@@ -28,4 +33,8 @@ const SName = styled.p`
   font-weight: bold;
   margin: 0px;
   color: #fbc;
+`;
+
+const SLink = styled(Link)`
+ color: #aaa;
 `;
