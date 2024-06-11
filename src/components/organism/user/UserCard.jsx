@@ -31,6 +31,6 @@ const SDl = styled.dl`
   dd {
     padding-left: 32px;
     padding-bottom: 8px;
-    overflow-wrap: brake-word;
+    overflow-wrap: break-word;
   }
 `;

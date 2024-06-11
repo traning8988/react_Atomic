@@ -20,5 +20,4 @@ const SButtonWrapper = styled.div`
 const SButtonContainer = styled.div`
   display: flex;
   aline-items: center;
-  background: #aaa;
 `;
