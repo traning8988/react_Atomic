@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../providers/UserProvider';
 
 export const UserIconWithName = (props) => {
-  const context = useContext(UserContext);
-  console.log(context);
-  const { name, image, isAdmin } = props;
+  const { userInfo } = useContext(UserContext);
+  console.log(userInfo);
+  const { name, image } = props;
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
+
   return (
     <SContainer>
       <SImg width={160}
